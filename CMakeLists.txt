@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.11)
+project(pntr_app_starter
+    DESCRIPTION "pntr_app_starter"
+    HOMEPAGE_URL "https://github.com/robloach/pntr_app_starter"
+    VERSION 0.0.1
+    LANGUAGES C
+)
+
+option(SDL "Build SDL" TRUE)
+option(RAYLIB "Build raylib" TRUE)
+option(LIBRETRO "Build libretro" TRUE)
+option(CLI "Build CLI" TRUE)
+
+set(SOURCES
+    main.c
+)
+
+# Have pntr_app_starter build the project
+list(APPEND CMAKE_MODULE_PATH ".pntr_app_starter")
+find_package(pntr_app_starter)
