@@ -12,9 +12,9 @@ option(LIBRETRO "Build libretro" TRUE)
 option(CLI "Build CLI" TRUE)
 
 set(SOURCES
-    main.c
+    src/main.c
 )
 
 # Have pntr_app_starter build the project
-list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/.pntr_app_starter")
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/.cmake")
 find_package(pntr_app_starter)

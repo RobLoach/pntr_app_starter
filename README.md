@@ -4,15 +4,17 @@ A boilerplate starter project for applications using [pntr](https://github.com/R
 
 ## Getting Started
 
-Open up [CMakeLists.txt](CMakeLists.txt) and rename the project name from "pntr_app_starter" to your own application name.
+1. Open up [CMakeLists.txt](CMakeLists.txt) and rename the project name from "pntr_app_starter" to your own application name.
 
-``` cmake
-project(MyGame
-    DESCRIPTION "My Game"
-    VERSION 0.0.1
-    LANGUAGES C
-)
-```
+    ``` cmake
+    project(MyGame
+        DESCRIPTION "My Game"
+        VERSION 0.0.1
+        LANGUAGES C
+    )
+    ```
+
+2. Edit [main.c](src/main.c) as much as you'd like
 
 ## Build
 
