@@ -112,12 +112,7 @@ if (LIBRETRO AND NOT EMSCRIPTEN)
     find_package(libretrodeps REQUIRED)
     set(project_name_libretro ${PROJECT_NAME}_libretro)
 
-
-    message(${CMAKE_CURRENT_LIST_DIR})
-    message(${libretrocommon_SOURCE_DIR})
-    message("AFSDAFSD")
     add_custom_target(${project_name_libretro} ALL
-        #COMMAND make
         WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
     )
 
@@ -136,5 +131,4 @@ if (LIBRETRO AND NOT EMSCRIPTEN)
         WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
         COMMAND_EXPAND_LISTS
     )
-
 endif()
