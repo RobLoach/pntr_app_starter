@@ -16,5 +16,5 @@ set(SOURCES
 )
 
 # Have pntr_app_starter build the project
-list(APPEND CMAKE_MODULE_PATH ".pntr_app_starter")
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/.pntr_app_starter")
 find_package(pntr_app_starter)
