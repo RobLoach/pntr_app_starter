@@ -25,11 +25,31 @@ if (RAYLIB)
     )
 
     target_link_libraries(${project_name_raylib} PUBLIC
-        raylib
+        raylib_static
         ${LIBRARIES}
     )
-    target_compile_definitions(${project_name_raylib}
-        PUBLIC PNTR_APP_RAYLIB
+
+    # Platform Updates
+    if (EMSCRIPTEN)
+        set_target_properties(${project_name_raylib} PROPERTIES OUTPUT_NAME "index")
+        set_target_properties(${project_name_raylib} PROPERTIES SUFFIX ".html")
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY --preload-file ${PROJECT_SOURCE_DIR}/resources@/resources --shell-file ${CMAKE_CURRENT_LIST_DIR}/shell.html")
+
+        target_compile_definitions(${project_name_raylib} PUBLIC
+            PLATFORM=Web
+        )
+    else()
+        set_property(TARGET ${project_name_raylib} PROPERTY C_STANDARD 99)
+    endif()
+
+    if (APPLE AND NOT EMSCRIPTEN)
+        target_link_libraries(${project_name_raylib} PUBLIC "-framework IOKit")
+        target_link_libraries(${project_name_raylib} PUBLIC "-framework Cocoa")
+        target_link_libraries(${project_name_raylib} PUBLIC "-framework OpenGL")
+    endif()
+
+    target_compile_definitions(${project_name_raylib} PUBLIC
+        PNTR_APP_RAYLIB
     )
 endif()
 
@@ -39,8 +59,8 @@ if (CLI AND NOT EMSCRIPTEN)
     add_executable(${project_name_cli}
         ${SOURCES}
     )
-    target_compile_definitions(${project_name_cli}
-        PUBLIC PNTR_APP_CLI
+    target_compile_definitions(${project_name_cli} PUBLIC
+        PNTR_APP_CLI
     )
     target_link_libraries(${project_name_cli} PUBLIC
         ${LIBRARIES}
