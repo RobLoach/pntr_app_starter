@@ -1,0 +1,13 @@
+{
+  "name": "pntr_app",
+  "version": "0.0.0",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "gen:api": "node tools/gen_api.mjs",
+    "build:raylib": "cmake -B build -DSDL=false -DRAYLIB=true -DLIBRETRO=false -DCLI=false && cmake --build build",
+    "build:sdl": "cmake -B build -DSDL=true -DRAYLIB=false -DLIBRETRO=false -DCLI=false && cmake --build build",
+    "build:libretro": "cmake -B build -DSDL=false -DRAYLIB=false -DLIBRETRO=true -DCLI=false && cmake --build build",
+    "build:cli": "cmake -B build -DSDL=false -DRAYLIB=false -DLIBRETRO=false -DCLI=true && cmake --build build"
+  }
+}

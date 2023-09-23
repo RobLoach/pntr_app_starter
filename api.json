@@ -1,0 +1,2814 @@
+[
+  {
+    "name": "pntr_new_image",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_gen_image_color",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_copy",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_from_image",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_subimage",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_image",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_clear_background",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_point",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_point_vec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "point",
+        "pntr_vector*"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_line",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "startPosX",
+        "int"
+      ],
+      [
+        "startPosY",
+        "int"
+      ],
+      [
+        "endPosX",
+        "int"
+      ],
+      [
+        "endPosY",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_line_vec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "start",
+        "pntr_vector"
+      ],
+      [
+        "end",
+        "pntr_vector"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_line_vertical",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_line_horizontal",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "thickness",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "rec",
+        "pntr_rectangle"
+      ],
+      [
+        "thickness",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_fill_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "rect",
+        "pntr_rectangle"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_gradient",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "topLeft",
+        "pntr_color"
+      ],
+      [
+        "topRight",
+        "pntr_color"
+      ],
+      [
+        "bottomLeft",
+        "pntr_color"
+      ],
+      [
+        "bottomRight",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_gradient_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "rect",
+        "pntr_rectangle"
+      ],
+      [
+        "topLeft",
+        "pntr_color"
+      ],
+      [
+        "topRight",
+        "pntr_color"
+      ],
+      [
+        "bottomLeft",
+        "pntr_color"
+      ],
+      [
+        "bottomRight",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_triangle",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x1",
+        "int"
+      ],
+      [
+        "y1",
+        "int"
+      ],
+      [
+        "x2",
+        "int"
+      ],
+      [
+        "y2",
+        "int"
+      ],
+      [
+        "x3",
+        "int"
+      ],
+      [
+        "y3",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_triangle_vec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "point1",
+        "pntr_vector"
+      ],
+      [
+        "point2",
+        "pntr_vector"
+      ],
+      [
+        "point3",
+        "pntr_vector"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_triangle_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x1",
+        "int"
+      ],
+      [
+        "y1",
+        "int"
+      ],
+      [
+        "x2",
+        "int"
+      ],
+      [
+        "y2",
+        "int"
+      ],
+      [
+        "x3",
+        "int"
+      ],
+      [
+        "y3",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_triangle_fill_vec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "point1",
+        "pntr_vector"
+      ],
+      [
+        "point2",
+        "pntr_vector"
+      ],
+      [
+        "point3",
+        "pntr_vector"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_ellipse",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radiusX",
+        "int"
+      ],
+      [
+        "radiusY",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_ellipse_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radiusX",
+        "int"
+      ],
+      [
+        "radiusY",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_circle",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radius",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_circle_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radius",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_polygon",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "points",
+        "pntr_vector*"
+      ],
+      [
+        "numPoints",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_polygon_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "points",
+        "pntr_vector*"
+      ],
+      [
+        "numPoints",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_polyline",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "points",
+        "pntr_vector*"
+      ],
+      [
+        "numPoints",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_arc",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radius",
+        "float"
+      ],
+      [
+        "startAngle",
+        "float"
+      ],
+      [
+        "endAngle",
+        "float"
+      ],
+      [
+        "segments",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_arc_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "centerX",
+        "int"
+      ],
+      [
+        "centerY",
+        "int"
+      ],
+      [
+        "radius",
+        "float"
+      ],
+      [
+        "startAngle",
+        "float"
+      ],
+      [
+        "endAngle",
+        "float"
+      ],
+      [
+        "segments",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_rounded",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "topLeftRadius",
+        "int"
+      ],
+      [
+        "topRightRadius",
+        "int"
+      ],
+      [
+        "bottomLeftRadius",
+        "int"
+      ],
+      [
+        "bottomRightRadius",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_rounded_fill",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "cornerRadius",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "srcRect",
+        "pntr_rectangle"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_tint",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_tint_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "srcRect",
+        "pntr_rectangle"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_rotated",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "degrees",
+        "float"
+      ],
+      [
+        "offsetX",
+        "float"
+      ],
+      [
+        "offsetY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_rotated_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "srcRect",
+        "pntr_rectangle"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "degrees",
+        "float"
+      ],
+      [
+        "offsetX",
+        "float"
+      ],
+      [
+        "offsetY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_flipped",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "flipHorizontal",
+        "bool"
+      ],
+      [
+        "flipVertical",
+        "bool"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_flipped_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "srcRec",
+        "pntr_rectangle"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "flipHorizontal",
+        "bool"
+      ],
+      [
+        "flipVertical",
+        "bool"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_scaled",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "scaleX",
+        "float"
+      ],
+      [
+        "scaleY",
+        "float"
+      ],
+      [
+        "offsetX",
+        "float"
+      ],
+      [
+        "offsetY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_image_scaled_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "src",
+        "pntr_image*"
+      ],
+      [
+        "srcRect",
+        "pntr_rectangle"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "scaleX",
+        "float"
+      ],
+      [
+        "scaleY",
+        "float"
+      ],
+      [
+        "offsetX",
+        "float"
+      ],
+      [
+        "offsetY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_text",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "text",
+        "const char*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_text_ex",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ],
+      [
+        "text",
+        "const char*"
+      ],
+      [
+        "...",
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "pntr_new_color",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "r",
+        "unsigned char"
+      ],
+      [
+        "g",
+        "unsigned char"
+      ],
+      [
+        "b",
+        "unsigned char"
+      ],
+      [
+        "a",
+        "unsigned char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_get_color",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "hexValue",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_get_r",
+    "returns": "unsigned char",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_get_g",
+    "returns": "unsigned char",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_get_b",
+    "returns": "unsigned char",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_get_a",
+    "returns": "unsigned char",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_set_r",
+    "returns": "void",
+    "args": [
+      [
+        "color",
+        "pntr_color*"
+      ],
+      [
+        "r",
+        "unsigned char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_set_g",
+    "returns": "void",
+    "args": [
+      [
+        "color",
+        "pntr_color*"
+      ],
+      [
+        "g",
+        "unsigned char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_set_b",
+    "returns": "void",
+    "args": [
+      [
+        "color",
+        "pntr_color*"
+      ],
+      [
+        "b",
+        "unsigned char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_set_a",
+    "returns": "void",
+    "args": [
+      [
+        "color",
+        "pntr_color*"
+      ],
+      [
+        "a",
+        "unsigned char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_get_color",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_save_file",
+    "returns": "bool",
+    "args": [
+      [
+        "*fileName",
+        "const char"
+      ],
+      [
+        "*data",
+        "const void"
+      ],
+      [
+        "bytesToWrite",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_to_pixelformat",
+    "returns": "void*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "dataSize",
+        "unsigned int*"
+      ],
+      [
+        "pixelFormat",
+        "pntr_pixelformat"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_save_image",
+    "returns": "bool",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "fileName",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_save_image_to_memory",
+    "returns": "unsigned char*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "dataSize",
+        "unsigned int*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_get_pixel_data_size",
+    "returns": "int",
+    "args": [
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "pixelFormat",
+        "pntr_pixelformat"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_image",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_image_from_memory",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "fileData",
+        "const unsigned char*"
+      ],
+      [
+        "dataSize",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_from_pixelformat",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "data",
+        "const void*"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "pixelFormat",
+        "pntr_pixelformat"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_set_error",
+    "returns": "void*",
+    "args": [
+      [
+        "error",
+        "pntr_error"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_get_error",
+    "returns": "const char*",
+    "args": [
+      [
+        "void",
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "pntr_get_error_code",
+    "returns": "pntr_error",
+    "args": [
+      [
+        "void",
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_resize",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "newWidth",
+        "int"
+      ],
+      [
+        "newHeight",
+        "int"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_scale",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "scaleX",
+        "float"
+      ],
+      [
+        "scaleY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_replace",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ],
+      [
+        "replace",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_tint",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_tint",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_fade",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ],
+      [
+        "alpha",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_fade",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "alpha",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_brightness",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ],
+      [
+        "factor",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_get_pixel_color",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "srcPtr",
+        "void*"
+      ],
+      [
+        "srcPixelFormat",
+        "pntr_pixelformat"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_set_pixel_color",
+    "returns": "void",
+    "args": [
+      [
+        "dstPtr",
+        "void*"
+      ],
+      [
+        "dstPixelFormat",
+        "pntr_pixelformat"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_default",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "void",
+        ""
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_font",
+    "returns": "void",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_font_copy",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_font_scale",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "scaleX",
+        "float"
+      ],
+      [
+        "scaleY",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_bmf",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_bmf_from_image",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_bmf_from_memory",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileData",
+        "const unsigned char*"
+      ],
+      [
+        "dataSize",
+        "unsigned int"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_measure_text",
+    "returns": "int",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "text",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_measure_text_ex",
+    "returns": "pntr_vector",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "text",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_gen_image_text",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "text",
+        "const char*"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_tty",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ],
+      [
+        "glyphWidth",
+        "int"
+      ],
+      [
+        "glyphHeight",
+        "int"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_tty_from_memory",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileData",
+        "const unsigned char*"
+      ],
+      [
+        "dataSize",
+        "unsigned int"
+      ],
+      [
+        "glyphWidth",
+        "int"
+      ],
+      [
+        "glyphHeight",
+        "int"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_tty_from_image",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "glyphWidth",
+        "int"
+      ],
+      [
+        "glyphHeight",
+        "int"
+      ],
+      [
+        "characters",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_file",
+    "returns": "unsigned char*",
+    "args": [
+      [
+        "*fileName",
+        "const char"
+      ],
+      [
+        "*bytesRead",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_file",
+    "returns": "void",
+    "args": [
+      [
+        "fileData",
+        "unsigned char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_file_text",
+    "returns": "const char*",
+    "args": [
+      [
+        "*fileName",
+        "const char"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_file_text",
+    "returns": "void",
+    "args": [
+      [
+        "text",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_ttf",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ],
+      [
+        "fontSize",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_font_ttf_from_memory",
+    "returns": "pntr_font*",
+    "args": [
+      [
+        "fileData",
+        "const unsigned char*"
+      ],
+      [
+        "dataSize",
+        "unsigned int"
+      ],
+      [
+        "fontSize",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_invert",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_invert",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_alpha_blend",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "dst",
+        "pntr_color"
+      ],
+      [
+        "src",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_alpha_border",
+    "returns": "pntr_rectangle",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "threshold",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_crop",
+    "returns": "bool",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_alpha_crop",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "threshold",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_brightness",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "factor",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_flip",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "horizontal",
+        "bool"
+      ],
+      [
+        "vertical",
+        "bool"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_contrast",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color",
+        "pntr_color"
+      ],
+      [
+        "contrast",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_color_contrast",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "contrast",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_alpha_mask",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "alphaMask",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_resize_canvas",
+    "returns": "bool",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "newWidth",
+        "int"
+      ],
+      [
+        "newHeight",
+        "int"
+      ],
+      [
+        "offsetX",
+        "int"
+      ],
+      [
+        "offsetY",
+        "int"
+      ],
+      [
+        "fill",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_rotate",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "degrees",
+        "float"
+      ],
+      [
+        "filter",
+        "pntr_filter"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_gen_image_gradient",
+    "returns": "pntr_image*",
+    "args": [
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "topLeft",
+        "pntr_color"
+      ],
+      [
+        "topRight",
+        "pntr_color"
+      ],
+      [
+        "bottomLeft",
+        "pntr_color"
+      ],
+      [
+        "bottomRight",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_color_bilinear_interpolate",
+    "returns": "pntr_color",
+    "args": [
+      [
+        "color00",
+        "pntr_color"
+      ],
+      [
+        "color01",
+        "pntr_color"
+      ],
+      [
+        "color10",
+        "pntr_color"
+      ],
+      [
+        "color11",
+        "pntr_color"
+      ],
+      [
+        "coordinateX",
+        "float"
+      ],
+      [
+        "coordinateY",
+        "float"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_memory",
+    "returns": "void*",
+    "args": [
+      [
+        "size",
+        "size_t"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_memory",
+    "returns": "void",
+    "args": [
+      [
+        "pointer",
+        "void*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_memory_copy",
+    "returns": "void*",
+    "args": [
+      [
+        "destination",
+        "void*"
+      ],
+      [
+        "source",
+        "void*"
+      ],
+      [
+        "size",
+        "size_t"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_put_horizontal_line_unsafe",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_point_unsafe",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_sound",
+    "returns": "pntr_sound*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_load_sound_from_memory",
+    "returns": "pntr_sound*",
+    "args": [
+      [
+        "fileName",
+        "const char*"
+      ],
+      [
+        "data",
+        "unsigned char*"
+      ],
+      [
+        "dataSize",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_unload_sound",
+    "returns": "void",
+    "args": [
+      [
+        "sound",
+        "pntr_sound*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_play_sound",
+    "returns": "void",
+    "args": [
+      [
+        "sound",
+        "pntr_sound*"
+      ],
+      [
+        "loop",
+        "bool"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_stop_sound",
+    "returns": "void",
+    "args": [
+      [
+        "sound",
+        "pntr_sound*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_userdata",
+    "returns": "void*",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_set_userdata",
+    "returns": "void",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "userData",
+        "void*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_width",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_height",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_delta_time",
+    "returns": "float",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_key_pressed",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "key",
+        "pntr_app_key"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_key_down",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "key",
+        "pntr_app_key"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_key_released",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "key",
+        "pntr_app_key"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_key_up",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "key",
+        "pntr_app_key"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_gamepad_button_pressed",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "gamepad",
+        "int"
+      ],
+      [
+        "key",
+        "pntr_app_gamepad_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_gamepad_button_down",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "gamepad",
+        "int"
+      ],
+      [
+        "key",
+        "pntr_app_gamepad_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_gamepad_button_released",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "gamepad",
+        "int"
+      ],
+      [
+        "key",
+        "pntr_app_gamepad_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_gamepad_button_up",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "gamepad",
+        "int"
+      ],
+      [
+        "key",
+        "pntr_app_gamepad_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_x",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_y",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_delta_x",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_delta_y",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_button_pressed",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "button",
+        "pntr_app_mouse_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_button_down",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "button",
+        "pntr_app_mouse_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_button_released",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "button",
+        "pntr_app_mouse_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_mouse_button_up",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "button",
+        "pntr_app_mouse_button"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_set_title",
+    "returns": "void",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "title",
+        "const char*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_set_size",
+    "returns": "bool",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_file_data",
+    "returns": "void*",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "size",
+        "unsigned int*"
+      ],
+      [
+        "unloadOnExit",
+        "bool"
+      ]
+    ]
+  }
+]

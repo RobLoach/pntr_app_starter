@@ -20,6 +20,9 @@ A boilerplate starter project for applications using [pntr](https://github.com/R
 
 The build process uses [CMake](https://cmake.org/).
 
+A package.json is included (even though it's not a node project) to quickly document all the things you can do with `npm run`.
+
+
 ### Native
 
 ```
