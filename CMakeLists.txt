@@ -10,6 +10,7 @@ option(SDL "Build SDL" TRUE)
 option(RAYLIB "Build raylib" TRUE)
 option(LIBRETRO "Build libretro" TRUE)
 option(CLI "Build CLI" TRUE)
+option(WEB "Build Web" TRUE)
 
 set(SOURCES
     src/main.c

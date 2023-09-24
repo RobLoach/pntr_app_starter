@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>pntr</title>
+    <title>pntr_app</title>
 
-    <meta name="title" content="pntr">
+    <meta name="title" content="pntr_app">
     <meta name="description" content="Application wrapper for pntr">
     <meta name="viewport" content="width=device-width">
 
@@ -26,6 +26,7 @@
         font-family: arial;
         margin: 0;
         padding: none;
+        background-color: black;
       }
 
       #header {
@@ -48,13 +49,16 @@
 
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; }
+      /*
       div.emscripten_border { border: 1px solid black; }
+      */
 
       /* NOTE: Canvas *must not* have any border or padding, or mouse coords will be wrong */
       canvas.emscripten {
         border: 0px none;
         background: black;
         width: 100%;
+        image-rendering: pixelated;
       }
 
       .spinner {
@@ -115,18 +119,6 @@
         margin-right: 20px;
       }
 
-      #output {
-        width: 100%;
-        height: 140px;
-        margin: 0 auto;
-        margin-top: 10px;
-        display: block;
-        background-color: black;
-        color: rgb(37, 174, 38);
-        font-family: 'Lucida Console', Monaco, monospace;
-        outline: none;
-      }
-
       input[type=button] {
         background-color: lightgray;
         border: 4px solid darkgray;
@@ -150,11 +142,6 @@
         <div class="spinner" id='spinner'></div>
         <div class="emscripten" id="status">Downloading...</div>
 
-        <span id='controls'>
-          <span><input type="button" value="🖵 FULLSCREEN" onclick="Module.requestFullscreen(false, false)"></span>
-          <span><input type="button" id="btn-audio" value="🔇 SUSPEND" onclick="toggleAudio()"></span>
-        </span>
-
         <div class="emscripten">
           <progress value="0" max="100" id="progress" hidden=1></progress>
         </div>
@@ -163,8 +150,6 @@
     <div class="emscripten_border">
       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
     </div>
-
-    <textarea id="output" rows="8"></textarea>
 
     <script type='text/javascript' src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"> </script>
     <script type='text/javascript'>
@@ -186,6 +171,7 @@
         }
     </script>
     <script type='text/javascript'>
+        var headerElement = document.querySelector("#header");
         var statusElement = document.querySelector('#status');
         var progressElement = document.querySelector('#progress');
         var spinnerElement = document.querySelector('#spinner');
@@ -193,27 +179,18 @@
             preRun: [],
             postRun: [],
             print: (function() {
-                var element = document.querySelector('#output');
-
-                if (element) element.value = '';    // Clear browser cache
-
                 return function(text) {
-                    if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-                    // These replacements are necessary if you render to raw HTML
-                    //text = text.replace(/&/g, "&amp;");
-                    //text = text.replace(/</g, "&lt;");
-                    //text = text.replace(/>/g, "&gt;");
-                    //text = text.replace('\n', '<br>', 'g');
-                    console.log(text);
-
-                    if (element) {
-                        element.value += text + "\n";
-                        element.scrollTop = element.scrollHeight; // focus on bottom
+                    if (arguments.length > 1) {
+                        text = Array.prototype.slice.call(arguments).join(' ');
                     }
+
+                    console.log(text);
                 };
             })(),
             printErr: function(text) {
-                if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                if (arguments.length > 1) {
+                    text = Array.prototype.slice.call(arguments).join(' ');
+                }
 
                 console.error(text);
             },
@@ -250,6 +227,7 @@
                     progressElement.max = null;
                     progressElement.hidden = true;
                     if (!text) spinnerElement.style.display = 'none';
+                    headerElement.style.display = 'none';
                 }
 
                 statusElement.innerHTML = text;
@@ -269,37 +247,6 @@
             spinnerElement.style.display = 'none';
             Module.setStatus = function(text) { if (text) Module.printErr('[post-exception status] ' + text); };
         };
-    </script>
-
-    <!-- REF: https://developers.google.com/web/updates/2018/11/web-audio-autoplay -->
-    <script type='text/javascript'>
-        var audioBtn = document.querySelector('#btn-audio');
-
-        // An array of all contexts to resume on the page
-        const audioContexList = [];
-        (function() {
-            // A proxy object to intercept AudioContexts and
-            // add them to the array for tracking and resuming later
-            self.AudioContext = new Proxy(self.AudioContext, {
-                construct(target, args) {
-                    const result = new target(...args);
-                    audioContexList.push(result);
-                    if (result.state == "suspended") audioBtn.value = "🔈 RESUME";
-                    return result;
-                }
-            });
-        })();
-
-        function toggleAudio() {
-            var resumed = false;
-            audioContexList.forEach(ctx => {
-                if (ctx.state == "suspended") { ctx.resume(); resumed = true; }
-                else if (ctx.state == "running") ctx.suspend();
-            });
-
-            if (resumed) audioBtn.value = "🔇 SUSPEND";
-            else audioBtn.value = "🔈 RESUME";
-        }
     </script>
     {{{ SCRIPT }}}
   </body>

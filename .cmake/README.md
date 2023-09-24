@@ -6,4 +6,4 @@ The files in this directory facilitate building pntr_app applications across a n
 - libretro
 - SDL
 - CLI
-- Emscripten
+- Web

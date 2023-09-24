@@ -155,3 +155,23 @@ if (LIBRETRO AND NOT EMSCRIPTEN)
         COMMAND_EXPAND_LISTS
     )
 endif()
+
+# Emscripten
+if (WEB AND EMSCRIPTEN)
+    set(project_name_web ${PROJECT_NAME}_web)
+
+    add_executable(${project_name_web}
+        ${SOURCES}
+    )
+    target_compile_definitions(${project_name_web} PUBLIC
+        PNTR_APP_WEB
+    )
+    target_link_libraries(${project_name_web} PUBLIC
+        ${LIBRARIES}
+    )
+    set_target_properties(${project_name_web} PROPERTIES SUFFIX ".html")
+    set_target_properties(${project_name_web} PROPERTIES OUTPUT_NAME "index")
+    set_property(TARGET ${project_name_web} PROPERTY C_STANDARD 99)
+
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s ASSERTIONS=1 -s WASM=1 --preload-file ${PROJECT_SOURCE_DIR}/resources@/resources --shell-file ${CMAKE_CURRENT_LIST_DIR}/shell.html")
+endif()
