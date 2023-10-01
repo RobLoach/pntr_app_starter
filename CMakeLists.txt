@@ -6,15 +6,20 @@ project(pntr_app_starter
     LANGUAGES C
 )
 
+# Targets
 option(SDL "Build SDL" TRUE)
 option(RAYLIB "Build raylib" TRUE)
 option(LIBRETRO "Build libretro" TRUE)
 option(CLI "Build CLI" TRUE)
 option(WEB "Build Web" TRUE)
 
+# Sources
 set(SOURCES
     src/main.c
 )
+
+# Libraries
+#list(APPEND LIBRARIES mycustomlibrary)
 
 # Have pntr_app_starter build the project
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/.cmake")
