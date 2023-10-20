@@ -805,7 +805,7 @@ $(LIBRARY_NAME)_CFLAGS += $(COMMON_FLAGS) $(CFLAGS)
 ${LIBRARY_NAME}_FILES = $(SOURCES_C)
 include $(THEOS_MAKE_PATH)/library.mk
 else
-all: $(TARGET)
+all: dependencies $(TARGET)
 $(TARGET): $(OBJECTS)
 ifeq ($(STATIC_LINKING),1)
 ifneq (,$(findstring msvc,$(platform)))
@@ -819,6 +819,9 @@ endif
 
 %.o: %.c
 	$(CC) -c $(OBJOUT)$@ $< $(CFLAGS) $(INCFLAGS)
+
+dependencies:
+	cmake -B ../build .. -DSDL=false -DRAYLIB=false -DLIBRETRO=true -DCLI=false -DWEB=false
 
 clean-objs:
 	rm -f $(OBJECTS)
