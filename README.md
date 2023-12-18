@@ -22,11 +22,10 @@ The build process uses [CMake](https://cmake.org/).
 
 A package.json is included (even though it's not a node project) to quickly document all the things you can do with `npm run`.
 
-
 ### Native
 
 ```
-cmake -B build -DSDL=true -DRAYLIB=true -DLIBRETRO=true -DCLI=true
+cmake -B build -DSDL=true -DRAYLIB=true -DLIBRETRO=true -DCLI=true -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
@@ -38,6 +37,21 @@ Use the [Emscripten SDK](https://emscripten.org/docs/tools_reference/emsdk.html)
 emcmake cmake -B build -DPLATFORM=Web -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-s USE_GLFW=3" -DCMAKE_EXECUTABLE_SUFFIX=".html"
 emmake make -C build
 emrun build/index.html
+```
+
+### libretro
+
+While the cmake definition for libretro is there, you may want to use the `make` directly.
+
+```
+LIBRETRO_COMMON_DIR=path/to/libretro-common \
+LIBRETRO_DEPS_DIR=path/to/libretro-deps \
+PNTR_DIR=path/to/pntr \
+PNTR_APP_DIR=path/to/pntr_app \
+TARGET_NAME=myproject \
+CORE_DIR=. \
+SOURCES=main.c \
+make -C .cmake
 ```
 
 ## License

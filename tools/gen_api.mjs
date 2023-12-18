@@ -10,7 +10,7 @@ let m
 while ((m = regex.exec(str)) !== null) {
   methods.push({
     name: m[3].trim(),
-    returns: m[2].trim(),
+    returns: m[2].replace('inline', '').trim(),
     args: m[4].split(',').map(s => {
       const i = s.trim().split(' ')
       return [i.at(-1), i.slice(0, -1).join(' ')]

@@ -94,6 +94,52 @@
     ]
   },
   {
+    "name": "pntr_image_get_clip",
+    "returns": "pntr_rectangle",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_set_clip",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ],
+      [
+        "x",
+        "int"
+      ],
+      [
+        "y",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_image_reset_clip",
+    "returns": "void",
+    "args": [
+      [
+        "image",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
     "name": "pntr_unload_image",
     "returns": "void",
     "args": [
@@ -150,6 +196,28 @@
       [
         "point",
         "pntr_vector*"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_points",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "points",
+        "pntr_vector*"
+      ],
+      [
+        "pointsCount",
+        "int"
       ],
       [
         "color",
@@ -286,10 +354,6 @@
         "int"
       ],
       [
-        "thickness",
-        "int"
-      ],
-      [
         "color",
         "pntr_color"
       ]
@@ -305,6 +369,58 @@
       ],
       [
         "rec",
+        "pntr_rectangle"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_thick",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "width",
+        "int"
+      ],
+      [
+        "height",
+        "int"
+      ],
+      [
+        "thickness",
+        "int"
+      ],
+      [
+        "color",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_draw_rectangle_thick_rec",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "rect",
         "pntr_rectangle"
       ],
       [
@@ -1110,6 +1226,10 @@
       [
         "flipVertical",
         "bool"
+      ],
+      [
+        "flipDiagonal",
+        "bool"
       ]
     ]
   },
@@ -1143,6 +1263,10 @@
       ],
       [
         "flipVertical",
+        "bool"
+      ],
+      [
+        "flipDiagonal",
         "bool"
       ]
     ]
@@ -1266,6 +1390,40 @@
     ]
   },
   {
+    "name": "pntr_draw_text_wrapped",
+    "returns": "void",
+    "args": [
+      [
+        "dst",
+        "pntr_image*"
+      ],
+      [
+        "font",
+        "pntr_font*"
+      ],
+      [
+        "text",
+        "const char*"
+      ],
+      [
+        "posX",
+        "int"
+      ],
+      [
+        "posY",
+        "int"
+      ],
+      [
+        "maxWidth",
+        "int"
+      ],
+      [
+        "tint",
+        "pntr_color"
+      ]
+    ]
+  },
+  {
     "name": "pntr_draw_text_ex",
     "returns": "void",
     "args": [
@@ -1332,7 +1490,7 @@
     ]
   },
   {
-    "name": "pntr_color_get_r",
+    "name": "pntr_color_r",
     "returns": "unsigned char",
     "args": [
       [
@@ -1342,7 +1500,7 @@
     ]
   },
   {
-    "name": "pntr_color_get_g",
+    "name": "pntr_color_g",
     "returns": "unsigned char",
     "args": [
       [
@@ -1352,7 +1510,7 @@
     ]
   },
   {
-    "name": "pntr_color_get_b",
+    "name": "pntr_color_b",
     "returns": "unsigned char",
     "args": [
       [
@@ -1362,7 +1520,7 @@
     ]
   },
   {
-    "name": "pntr_color_get_a",
+    "name": "pntr_color_a",
     "returns": "unsigned char",
     "args": [
       [
@@ -1504,6 +1662,10 @@
         "pntr_image*"
       ],
       [
+        "type",
+        "pntr_image_type"
+      ],
+      [
         "dataSize",
         "unsigned int*"
       ]
@@ -1541,6 +1703,10 @@
     "name": "pntr_load_image_from_memory",
     "returns": "pntr_image*",
     "args": [
+      [
+        "type",
+        "pntr_image_type"
+      ],
       [
         "fileData",
         "const unsigned char*"
@@ -1890,6 +2056,10 @@
       [
         "text",
         "const char*"
+      ],
+      [
+        "textLength",
+        "int"
       ]
     ]
   },
@@ -2374,6 +2544,16 @@
     ]
   },
   {
+    "name": "pntr_get_file_image_type",
+    "returns": "pntr_image_type",
+    "args": [
+      [
+        "filePath",
+        "const char*"
+      ]
+    ]
+  },
+  {
     "name": "pntr_put_horizontal_line_unsafe",
     "returns": "void",
     "args": [
@@ -2436,8 +2616,8 @@
     "returns": "pntr_sound*",
     "args": [
       [
-        "fileName",
-        "const char*"
+        "type",
+        "pntr_app_sound_type"
       ],
       [
         "data",
@@ -2480,6 +2660,16 @@
       [
         "sound",
         "pntr_sound*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_get_file_sound_type",
+    "returns": "pntr_app_sound_type",
+    "args": [
+      [
+        "fileName",
+        "const char*"
       ]
     ]
   },
@@ -2534,6 +2724,52 @@
       [
         "app",
         "pntr_app*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_random",
+    "returns": "int",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "min",
+        "int"
+      ],
+      [
+        "max",
+        "int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_random_seed",
+    "returns": "void",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "seed",
+        "unsigned int"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_log",
+    "returns": "void",
+    "args": [
+      [
+        "type",
+        "pntr_app_log_type"
+      ],
+      [
+        "message",
+        "const char*"
       ]
     ]
   },
@@ -2776,6 +3012,16 @@
     ]
   },
   {
+    "name": "pntr_app_title",
+    "returns": "const char*",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ]
+    ]
+  },
+  {
     "name": "pntr_app_set_size",
     "returns": "bool",
     "args": [
@@ -2794,7 +3040,21 @@
     ]
   },
   {
-    "name": "pntr_app_file_data",
+    "name": "pntr_app_set_icon",
+    "returns": "void",
+    "args": [
+      [
+        "app",
+        "pntr_app*"
+      ],
+      [
+        "icon",
+        "pntr_image*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_load_arg_file",
     "returns": "void*",
     "args": [
       [
@@ -2804,10 +3064,24 @@
       [
         "size",
         "unsigned int*"
+      ]
+    ]
+  },
+  {
+    "name": "pntr_app_log_ex",
+    "returns": "void",
+    "args": [
+      [
+        "type",
+        "pntr_app_log_type"
       ],
       [
-        "unloadOnExit",
-        "bool"
+        "message",
+        "const char*"
+      ],
+      [
+        "...",
+        ""
       ]
     ]
   }
