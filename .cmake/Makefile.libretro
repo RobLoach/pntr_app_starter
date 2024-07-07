@@ -821,7 +821,7 @@ endif
 	$(CC) -c $(OBJOUT)$@ $< $(CFLAGS) $(INCFLAGS)
 
 dependencies:
-	cmake -B ../build .. -DSDL=false -DRAYLIB=false -DLIBRETRO=true -DCLI=false -DWEB=false
+	#cmake -B ../build .. -DSDL=false -DRAYLIB=false -DLIBRETRO=true -DCLI=false -DWEB=false
 
 clean-objs:
 	rm -f $(OBJECTS)

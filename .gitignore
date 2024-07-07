@@ -2,3 +2,4 @@ build
 *.o
 *.so
 package-lock.json
+node_modules
